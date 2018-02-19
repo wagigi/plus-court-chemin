@@ -1,3 +1,6 @@
+# coding=utf-8
+
+
 def antecedents(pere, depart, extremite, trajet):
     if extremite == depart:
         return [depart] + trajet
@@ -46,7 +49,7 @@ def dijkstra(graphe, debut, fin):
 
 
 def demande_graphe():
-    graphe = {}
+    demandegraphe = {}
     ajoutpoint = True
     print("""On peut renseigner les voisins même s'ils n'ont pas été définis
 L'ordre des points n'a pas d'importance, les sommets seront demandés par la suite""")
@@ -58,10 +61,10 @@ L'ordre des points n'a pas d'importance, les sommets seront demandés par la sui
             tmp_voisin = demande_voisin(tmp_point)
             tmp_voisins[tmp_voisin[0]] = tmp_voisin[1]
             ajoutvoisin = ouinon("Faut il un autre voisin ? (Y/n)")
-        graphe[tmp_point] = tmp_voisins
+        demandegraphe[tmp_point] = tmp_voisins
         ajoutpoint = ouinon("Faut il un autre point ? (Y/n)")
 
-    return graphe
+    return demandegraphe
 
 
 def ouinon(texte):
@@ -91,9 +94,8 @@ def demande_voisin(point_pere):
 if __name__ == "__main__":
 
     # On détermine le tableau en dictionnaire. Chaque point a un dictionnaire de ses voisins avec leur pondération
-    # graphe = demande_graphe()
-    graphe = {'a': {'b': 4, 'c': 6}, 'b': {'d': 5}, 'c': {'d': 9}}
-
+    # graphe = {'a': {'b': 4, 'c': 6}, 'b': {'d': 5}, 'c': {'d': 9}, 'd': {}}
+    graphe = demande_graphe()
 
     print(graphe)
 
