@@ -51,8 +51,9 @@ def dijkstra(graphe, debut, fin):
 def demande_graphe():
     demandegraphe = {}
     ajoutpoint = True
-    print("""On peut renseigner les voisins même s'ils n'ont pas été définis
-L'ordre des points n'a pas d'importance, les sommets seront demandés par la suite""")
+    print("""Veuillez renseigner un graphe.
+    On peut renseigner les voisins même s'ils n'ont pas été définis
+    L'ordre des points n'a pas d'importance, les sommets seront demandés par la suite""")
     while ajoutpoint:
         tmp_point = demande_point()
         tmp_voisins = {}
@@ -82,13 +83,13 @@ def ouinon(texte):
 
 def demande_point():
     point = input("Selectionner le nom du point :\n")
-    return point
+    return point.lower()
 
 
 def demande_voisin(point_pere):
     point = input("Selectionner le nom du voisin de {} :\n".format(point_pere))
     ponde = int(input("Selectionner la ponderation :\n"))
-    return point, ponde
+    return point.lower(), ponde
 
 
 if __name__ == "__main__":
